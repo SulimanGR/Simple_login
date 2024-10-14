@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restricted Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+        <script>
+            window.onload = function() {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    alert('You need to log in first!');
+                    window.location.href = 'index.html'; // Redirect to login page
+                }
+            };
+        </script>
+</head>
+<body>
+
+    <h1>Welcome to the Restricted Page!</h1>
+    <button id="logout-button">Logout</button>
+
+    <script src="fetch.js"></script>
+</body>
+</html>
